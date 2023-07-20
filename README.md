@@ -1,4 +1,4 @@
-# odin-react-CV
+# odin-react-cv-builder
 ## The Odin Project - CV Application
 
 Project completed as part of The Odin Project. Create a small CV application
