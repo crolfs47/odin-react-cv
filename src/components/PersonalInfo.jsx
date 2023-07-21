@@ -1,15 +1,9 @@
 function PersonalInfo({
-  firstName = "First",
-  lastName = "Last",
-  phone = "999-999-9999",
-  email = "email@email.com",
+  firstName,
+  lastName,
+  phone,
+  email,
 }) {
-  const Info = {
-    firstName: firstName,
-    lastName: lastName,
-    phone: phone,
-    email: email,
-  }
 
   return (
     <>
