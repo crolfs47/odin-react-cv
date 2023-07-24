@@ -1,7 +1,6 @@
 import { useState } from "react";
-import PersonalInfo from "./PersonalInfo";
 
-export default function PersonalInfoForm({handleInfoUpdate}) {
+export default function PersonalInfoForm({handleUpdate}) {
   const [info, setInfo] = useState({
     firstName: "",
     lastName: "",
@@ -19,7 +18,7 @@ export default function PersonalInfoForm({handleInfoUpdate}) {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(info);
-    handleInfoUpdate(info);
+    handleUpdate(info);
   }
 
   return (
