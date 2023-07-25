@@ -7,10 +7,10 @@ import EducationInfoForm from './components/EducationInfoForm'
 
 function App() {
   const [info, setInfo] = useState({
-    firstName: "First",
-    lastName: "Last",
-    phone: "999-999-9999",
-    email: "email@email.com",
+    firstName: "Your",
+    lastName: "Name",
+    phone: "",
+    email: "",
   })
 
   const [education, setEducation] = useState({
