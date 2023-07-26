@@ -19,12 +19,11 @@ function App() {
     concentration: "Concentation",
     graduationDate: "Graduation Date",
   })
-
+  
   return (
     <>
       <div>
-        <PersonalInfo {...info} />
-        <PersonalInfoForm handleUpdate={(newInfo) => setInfo(newInfo)} />
+        <PersonalInfo {...info} handleUpdate={(newInfo) => setInfo(newInfo)} />
         <EducationInfo {...education} />
         <EducationInfoForm handleUpdate={(newEducation) => setEducation(newEducation)} />
       </div>

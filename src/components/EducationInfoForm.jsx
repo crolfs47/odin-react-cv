@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function EducationInfoForm({ handleUpdate }) {
-  const [education, setEducation] = useState({
+  const [educationInput, setEducationInput] = useState({
     schoolName: "",
     degreeType: "",
     concentration: "",
@@ -9,15 +9,15 @@ export default function EducationInfoForm({ handleUpdate }) {
   });
 
   function handleEducationChange(e) {
-    setEducation({
-      ...education,
+    setEducationInput({
+      ...educationInput,
       [e.target.name]: e.target.value,
     });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleUpdate(education);
+    handleUpdate(educationInput);
   }
 
   return (
@@ -27,7 +27,7 @@ export default function EducationInfoForm({ handleUpdate }) {
         <label>
           School Name:
           <input
-            value={education.schoolName}
+            value={educationInput.schoolName}
             name="schoolName"
             onChange={handleEducationChange}
           ></input>
@@ -35,7 +35,7 @@ export default function EducationInfoForm({ handleUpdate }) {
         <label>
           Degree Type:
           <input
-            value={education.degreeType}
+            value={educationInput.degreeType}
             name="degreeType"
             onChange={handleEducationChange}
           ></input>
@@ -43,7 +43,7 @@ export default function EducationInfoForm({ handleUpdate }) {
         <label>
           Concentration:
           <input
-            value={education.concentration}
+            value={educationInput.concentration}
             name="concentration"
             onChange={handleEducationChange}
           ></input>
@@ -51,7 +51,7 @@ export default function EducationInfoForm({ handleUpdate }) {
         <label>
           Graduation Date:
           <input
-            value={education.graduationDate}
+            value={educationInput.graduationDate}
             name="graduationDate"
             onChange={handleEducationChange}
           ></input>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function PersonalInfoForm({handleUpdate}) {
-  const [info, setInfo] = useState({
+export default function PersonalInfoForm({ onInfoSubmit }) {
+  const [infoInput, setInfoInput] = useState({
     firstName: "",
     lastName: "",
     phone: "",
@@ -9,58 +9,66 @@ export default function PersonalInfoForm({handleUpdate}) {
   });
 
   function handleInfoChange(e) {
-    setInfo({
-      ...info,
+    setInfoInput({
+      ...infoInput,
       [e.target.name]: e.target.value,
     });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(info);
-    handleUpdate(info);
+    onInfoSubmit(infoInput);
   }
 
   return (
     <>
-      <h2>Personal Information</h2>
+      <h1>Personal Information</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          First Name:
-          <input
-            value={info.firstName}
-            name="firstName"
-            onChange={handleInfoChange}
-          ></input>
-        </label>
+        <div>
+          <label>
+            First Name:
+            <input
+              value={infoInput.firstName}
+              name="firstName"
+              onChange={handleInfoChange}
+            ></input>
+          </label>
+        </div>
 
-        <label>
-          Last Name:
-          <input
-            value={info.lastName}
-            name="lastName"
-            onChange={handleInfoChange}
-          ></input>
-        </label>
+        <div>
+          <label>
+            Last Name:
+            <input
+              value={infoInput.lastName}
+              name="lastName"
+              onChange={handleInfoChange}
+            ></input>
+          </label>
+        </div>
 
-        <label>
-          Phone Number:
-          <input
-            value={info.phone}
-            name="phone"
-            onChange={handleInfoChange}
-          ></input>
-        </label>
+        <div>
+          <label>
+            Phone Number:
+            <input
+              value={infoInput.phone}
+              name="phone"
+              onChange={handleInfoChange}
+            ></input>
+          </label>
+        </div>
 
-        <label>
-          Email:
-          <input
-            value={info.email}
-            name="email"
-            onChange={handleInfoChange}
-          ></input>
-        </label>
+        <div>
+          <label>
+            Email:
+            <input
+              value={infoInput.email}
+              name="email"
+              onChange={handleInfoChange}
+            ></input>
+          </label>
+        </div>
         <button type="submit"> Submit </button>
+        <button type="button"> Cancel </button>
       </form>
     </>
   );
