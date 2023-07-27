@@ -40,6 +40,7 @@ function EducationInfo({
               handleUpdate(info);
               handleEdit();
             }}
+            onCancel={handleEdit}
           />
         </div>
       )}

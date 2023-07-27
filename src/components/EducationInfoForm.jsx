@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function EducationInfoForm({ onEducationSubmit }) {
+export default function EducationInfoForm({ onEducationSubmit, onCancel }) {
   const [educationInput, setEducationInput] = useState({
     schoolName: "",
     degreeType: "",
@@ -69,7 +69,7 @@ export default function EducationInfoForm({ onEducationSubmit }) {
         </div>
         <div className="form-buttons">
           <button type="submit"> Submit </button>
-          <button type="button"> Cancel </button>
+          <button type="button" onClick={onCancel}> Cancel </button>
         </div>
       </form>
     </>
