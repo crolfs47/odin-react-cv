@@ -31,6 +31,7 @@ export default function EducationInfoForm({ onEducationSubmit, onCancel }) {
               value={educationInput.schoolName}
               name="schoolName"
               onChange={handleEducationChange}
+              required
             ></input>
           </label>
         </div>
@@ -42,6 +43,7 @@ export default function EducationInfoForm({ onEducationSubmit, onCancel }) {
               value={educationInput.degreeType}
               name="degreeType"
               onChange={handleEducationChange}
+              required
             ></input>
           </label>
         </div>
@@ -53,6 +55,7 @@ export default function EducationInfoForm({ onEducationSubmit, onCancel }) {
               value={educationInput.concentration}
               name="concentration"
               onChange={handleEducationChange}
+              required
             ></input>
           </label>
         </div>
@@ -64,6 +67,7 @@ export default function EducationInfoForm({ onEducationSubmit, onCancel }) {
               value={educationInput.graduationDate}
               name="graduationDate"
               onChange={handleEducationChange}
+              required
             ></input>
           </label>
         </div>
