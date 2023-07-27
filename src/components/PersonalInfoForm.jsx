@@ -22,7 +22,7 @@ export default function PersonalInfoForm({ onInfoSubmit }) {
 
   return (
     <>
-      <h1>Personal Information</h1>
+      <h1 className="bottom-border">Personal Information</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
@@ -67,7 +67,7 @@ export default function PersonalInfoForm({ onInfoSubmit }) {
             ></input>
           </label>
         </div>
-        
+
         <button type="submit"> Submit </button>
         <button type="button"> Cancel </button>
       </form>

@@ -22,7 +22,7 @@ export default function EducationInfoForm({ onEducationSubmit }) {
 
   return (
     <>
-      <h1>Education</h1>
+      <h2 className="bottom-border">Education</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>

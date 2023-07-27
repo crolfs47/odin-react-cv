@@ -18,16 +18,19 @@ function EducationInfo({
     <>
       {!isEdit ? (
         <div>
-          <h1>
-            Education
+          <div className="bottom-border flex space-between">
+            <h2>Education</h2>
             <button onClick={handleEdit}>Edit</button>
-          </h1>
+          </div>
 
           <div>
-            <h5>{schoolName}</h5>
-            <h5>{degreeType}</h5>
-            <h5>{concentration}</h5>
-            <h5>{graduationDate}</h5>
+            <div className="flex space-between">
+              <div className="bold">{schoolName}</div>
+              <div>{graduationDate}</div>
+            </div>
+            <div>
+              {degreeType}, Concentration: {concentration}
+            </div>
           </div>
         </div>
       ) : (

@@ -1,28 +1,26 @@
 import { useState } from 'react'
 import './App.css'
 import PersonalInfo from './components/PersonalInfo'
-import PersonalInfoForm from './components/PersonalInfoForm'
 import EducationInfo from './components/EducationInfo'
-import EducationInfoForm from './components/EducationInfoForm'
 
 function App() {
   const [info, setInfo] = useState({
     firstName: "Your",
     lastName: "Name",
-    phone: "",
-    email: "",
+    phone: "(999) 999-9999",
+    email: "email@email.com",
   })
 
   const [education, setEducation] = useState({
-    schoolName: "",
-    degreeType: "",
-    concentration: "",
-    graduationDate: "",
+    schoolName: "School Name",
+    degreeType: "Degree",
+    concentration: "Concentration",
+    graduationDate: "Month YYYY",
   })
   
   return (
     <>
-      <div>
+      <div className="cv-container">
         <PersonalInfo {...info} handleUpdate={(newInfo) => setInfo(newInfo)} />
         <EducationInfo {...education} handleUpdate={(newEducation) => setEducation(newEducation)} />
       </div>

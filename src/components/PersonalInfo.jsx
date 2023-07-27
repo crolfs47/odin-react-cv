@@ -12,12 +12,13 @@ function PersonalInfo({ firstName, lastName, phone, email, handleUpdate }) {
     <>
       {!isEdit ? (
         <div>
-          <h1>
-            {firstName} {lastName}
+          <div className="bottom-border flex space-between">
+            <h1 className="uppercase">{firstName} {lastName}</h1>
             <button onClick={handleEdit}>Edit</button>
-          </h1>
-          <h5>{phone}</h5>
-          <h5>{email}</h5>
+          </div>
+          <div className="personal-info">
+            {phone} ∙ {email}
+          </div>
         </div>
       ) : (
         <div>

@@ -4,6 +4,61 @@
   padding: 2rem;
 }
 
-.card {
-  padding: 2em;
+.flex {
+  display: flex;
+  align-items: baseline;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bottom-border {
+  border-bottom: 1px solid black;
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-size: 28px;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 24px;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.personal-info {
+  font-size: 14px;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+  height: fit-content;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: black;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
