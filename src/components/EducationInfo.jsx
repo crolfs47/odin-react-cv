@@ -17,7 +17,7 @@ function EducationInfo({
   return (
     <>
       {!isEdit ? (
-        <div>
+        <div className="section-container">
           <div className="bottom-border flex space-between">
             <h2>Education</h2>
             <button onClick={handleEdit}>Edit</button>
@@ -34,7 +34,7 @@ function EducationInfo({
           </div>
         </div>
       ) : (
-        <div>
+        <div className="form-container">
           <EducationInfoForm
             onEducationSubmit={(info) => {
               handleUpdate(info);

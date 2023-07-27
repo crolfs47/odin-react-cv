@@ -24,7 +24,7 @@ export default function EducationInfoForm({ onEducationSubmit }) {
     <>
       <h2 className="bottom-border">Education</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-item">
           <label>
             School Name:
             <input
@@ -35,7 +35,7 @@ export default function EducationInfoForm({ onEducationSubmit }) {
           </label>
         </div>
 
-        <div>
+        <div className="form-item">
           <label>
             Degree Type:
             <input
@@ -46,7 +46,7 @@ export default function EducationInfoForm({ onEducationSubmit }) {
           </label>
         </div>
 
-        <div>
+        <div className="form-item">
           <label>
             Concentration:
             <input
@@ -57,7 +57,7 @@ export default function EducationInfoForm({ onEducationSubmit }) {
           </label>
         </div>
 
-        <div>
+        <div className="form-item">
           <label>
             Graduation Date:
             <input
@@ -67,9 +67,10 @@ export default function EducationInfoForm({ onEducationSubmit }) {
             ></input>
           </label>
         </div>
-
-        <button type="submit"> Submit </button>
-        <button type="button"> Cancel </button>
+        <div className="form-buttons">
+          <button type="submit"> Submit </button>
+          <button type="button"> Cancel </button>
+        </div>
       </form>
     </>
   );

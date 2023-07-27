@@ -24,7 +24,7 @@ export default function PersonalInfoForm({ onInfoSubmit }) {
     <>
       <h1 className="bottom-border">Personal Information</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-item">
           <label>
             First Name:
             <input
@@ -35,7 +35,7 @@ export default function PersonalInfoForm({ onInfoSubmit }) {
           </label>
         </div>
 
-        <div>
+        <div className="form-item">
           <label>
             Last Name:
             <input
@@ -46,7 +46,7 @@ export default function PersonalInfoForm({ onInfoSubmit }) {
           </label>
         </div>
 
-        <div>
+        <div className="form-item">
           <label>
             Phone Number:
             <input
@@ -57,7 +57,7 @@ export default function PersonalInfoForm({ onInfoSubmit }) {
           </label>
         </div>
 
-        <div>
+        <div className="form-item">
           <label>
             Email:
             <input
@@ -68,8 +68,10 @@ export default function PersonalInfoForm({ onInfoSubmit }) {
           </label>
         </div>
 
-        <button type="submit"> Submit </button>
-        <button type="button"> Cancel </button>
+        <div className="form-buttons">
+          <button type="submit"> Submit </button>
+          <button type="button"> Cancel </button>
+        </div>
       </form>
     </>
   );
