@@ -2,7 +2,7 @@ import { useState } from "react";
 import PersonalInfoForm from "./PersonalInfoForm";
 
 function PersonalInfo({ firstName, lastName, phone, email, handleUpdate }) {
-  const personalInfo = {
+  const currentPersonalInfo = {
     firstName,
     lastName,
     phone,
@@ -32,7 +32,7 @@ function PersonalInfo({ firstName, lastName, phone, email, handleUpdate }) {
       ) : (
         <div className="form-container">
           <PersonalInfoForm
-            {...personalInfo}
+            {...currentPersonalInfo}
             onSubmit={(info) => {
               handleUpdate(info);
               handleEdit();

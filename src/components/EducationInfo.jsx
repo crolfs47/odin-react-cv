@@ -8,6 +8,13 @@ function EducationInfo({
   graduationDate,
   handleUpdate,
 }) {
+  const currentEducationInfo = {
+  schoolName,
+  degreeType,
+  concentration,
+  graduationDate,
+  }
+
   const [isEdit, setEdit] = useState(false);
 
   function handleEdit() {
@@ -36,6 +43,7 @@ function EducationInfo({
       ) : (
         <div className="form-container">
           <EducationInfoForm
+            {...currentEducationInfo}
             onEducationSubmit={(info) => {
               handleUpdate(info);
               handleEdit();

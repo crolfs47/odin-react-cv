@@ -1,11 +1,18 @@
 import { useState } from "react";
 
-export default function PersonalInfoForm({ onSubmit, onCancel, firstName, lastName, phone, email }) {
+export default function PersonalInfoForm({
+  onSubmit,
+  onCancel,
+  firstName,
+  lastName,
+  phone,
+  email,
+}) {
   const [infoInput, setInfoInput] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    email: "",
+    firstName,
+    lastName,
+    phone,
+    email,
   });
 
   function handleInfoChange(e) {
@@ -30,7 +37,6 @@ export default function PersonalInfoForm({ onSubmit, onCancel, firstName, lastNa
             <input
               value={infoInput.firstName}
               name="firstName"
-              placeholder={firstName}
               onChange={handleInfoChange}
               required
             ></input>
@@ -76,7 +82,10 @@ export default function PersonalInfoForm({ onSubmit, onCancel, firstName, lastNa
 
         <div className="form-buttons">
           <button type="submit"> Submit </button>
-          <button type="button" onClick={onCancel}> Cancel </button>
+          <button type="button" onClick={onCancel}>
+            {" "}
+            Cancel{" "}
+          </button>
         </div>
       </form>
     </>

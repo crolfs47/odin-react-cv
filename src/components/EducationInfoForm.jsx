@@ -1,11 +1,18 @@
 import { useState } from "react";
 
-export default function EducationInfoForm({ onEducationSubmit, onCancel }) {
+export default function EducationInfoForm({
+  onEducationSubmit,
+  onCancel,
+  schoolName,
+  degreeType,
+  concentration,
+  graduationDate,
+}) {
   const [educationInput, setEducationInput] = useState({
-    schoolName: "",
-    degreeType: "",
-    concentration: "",
-    graduationDate: "",
+    schoolName,
+    degreeType,
+    concentration,
+    graduationDate,
   });
 
   function handleEducationChange(e) {
@@ -73,7 +80,10 @@ export default function EducationInfoForm({ onEducationSubmit, onCancel }) {
         </div>
         <div className="form-buttons">
           <button type="submit"> Submit </button>
-          <button type="button" onClick={onCancel}> Cancel </button>
+          <button type="button" onClick={onCancel}>
+            {" "}
+            Cancel{" "}
+          </button>
         </div>
       </form>
     </>
