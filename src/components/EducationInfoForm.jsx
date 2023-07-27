@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function EducationInfoForm({ handleUpdate }) {
+export default function EducationInfoForm({ onEducationSubmit }) {
   const [educationInput, setEducationInput] = useState({
     schoolName: "",
     degreeType: "",
@@ -17,46 +17,59 @@ export default function EducationInfoForm({ handleUpdate }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleUpdate(educationInput);
+    onEducationSubmit(educationInput);
   }
 
   return (
     <>
-      <h2>Education</h2>
+      <h1>Education</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          School Name:
-          <input
-            value={educationInput.schoolName}
-            name="schoolName"
-            onChange={handleEducationChange}
-          ></input>
-        </label>
-        <label>
-          Degree Type:
-          <input
-            value={educationInput.degreeType}
-            name="degreeType"
-            onChange={handleEducationChange}
-          ></input>
-        </label>
-        <label>
-          Concentration:
-          <input
-            value={educationInput.concentration}
-            name="concentration"
-            onChange={handleEducationChange}
-          ></input>
-        </label>
-        <label>
-          Graduation Date:
-          <input
-            value={educationInput.graduationDate}
-            name="graduationDate"
-            onChange={handleEducationChange}
-          ></input>
-        </label>
+        <div>
+          <label>
+            School Name:
+            <input
+              value={educationInput.schoolName}
+              name="schoolName"
+              onChange={handleEducationChange}
+            ></input>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Degree Type:
+            <input
+              value={educationInput.degreeType}
+              name="degreeType"
+              onChange={handleEducationChange}
+            ></input>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Concentration:
+            <input
+              value={educationInput.concentration}
+              name="concentration"
+              onChange={handleEducationChange}
+            ></input>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Graduation Date:
+            <input
+              value={educationInput.graduationDate}
+              name="graduationDate"
+              onChange={handleEducationChange}
+            ></input>
+          </label>
+        </div>
+
         <button type="submit"> Submit </button>
+        <button type="button"> Cancel </button>
       </form>
     </>
   );

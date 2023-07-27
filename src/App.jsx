@@ -14,18 +14,17 @@ function App() {
   })
 
   const [education, setEducation] = useState({
-    schoolName: "School Name",
-    degreeType: "Degree Type",
-    concentration: "Concentation",
-    graduationDate: "Graduation Date",
+    schoolName: "",
+    degreeType: "",
+    concentration: "",
+    graduationDate: "",
   })
   
   return (
     <>
       <div>
         <PersonalInfo {...info} handleUpdate={(newInfo) => setInfo(newInfo)} />
-        <EducationInfo {...education} />
-        <EducationInfoForm handleUpdate={(newEducation) => setEducation(newEducation)} />
+        <EducationInfo {...education} handleUpdate={(newEducation) => setEducation(newEducation)} />
       </div>
     </>
   )

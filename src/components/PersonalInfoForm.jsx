@@ -67,6 +67,7 @@ export default function PersonalInfoForm({ onInfoSubmit }) {
             ></input>
           </label>
         </div>
+        
         <button type="submit"> Submit </button>
         <button type="button"> Cancel </button>
       </form>

@@ -2,16 +2,15 @@ import { useState } from "react";
 import PersonalInfoForm from "./PersonalInfoForm";
 
 function PersonalInfo({ firstName, lastName, phone, email, handleUpdate }) {
-  const [isEditInfo, setEditInfo] = useState(false);
+  const [isEdit, setEdit] = useState(false);
 
   function handleEdit() {
-    setEditInfo(!isEditInfo);
+    setEdit(!isEdit);
   }
 
   return (
     <>
-      <div></div>
-      {!isEditInfo ? (
+      {!isEdit ? (
         <div>
           <h1>
             {firstName} {lastName}
