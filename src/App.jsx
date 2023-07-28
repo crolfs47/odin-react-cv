@@ -2,8 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import PersonalInfo from './components/PersonalInfo'
 import EducationInfo from './components/EducationInfo'
+import Experience from './components/Experience'
 
-function App() {
+const App = () => {
   const [info, setInfo] = useState({
     firstName: "First",
     lastName: "Last",
@@ -15,7 +16,15 @@ function App() {
     schoolName: "School Name",
     degreeType: "Degree",
     concentration: "Concentration",
-    graduationDate: "Month YYYY",
+    graduationDate: "Graduation MM YYYY",
+  })
+
+  const [experience, setExperience] = useState({
+    companyName: "Company Name",
+    title: "Job Title",
+    startDate: "Start Date",
+    endDate: "End Date",
+    description: "Add description",
   })
   
   return (
@@ -23,9 +32,11 @@ function App() {
       <div className="cv-container">
         <PersonalInfo {...info} handleUpdate={(newInfo) => setInfo(newInfo)} />
         <EducationInfo {...education} handleUpdate={(newEducation) => setEducation(newEducation)} />
+        <Experience {...experience} handleUpdate={(newExperience) => setExperience(newExperience)}/>
+
       </div>
     </>
   )
 }
 
-export default App
+export default App;

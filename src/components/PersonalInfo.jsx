@@ -13,7 +13,7 @@ const PersonalInfo = ({ firstName, lastName, phone, email, handleUpdate }) => {
 
   const handleEdit = () => {
     setEdit(!isEdit);
-  }
+  };
 
   return (
     <>
@@ -43,6 +43,6 @@ const PersonalInfo = ({ firstName, lastName, phone, email, handleUpdate }) => {
       )}
     </>
   );
-}
+};
 
 export default PersonalInfo;
