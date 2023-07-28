@@ -5,8 +5,8 @@ import EducationInfo from './components/EducationInfo'
 
 function App() {
   const [info, setInfo] = useState({
-    firstName: "Your",
-    lastName: "Name",
+    firstName: "First",
+    lastName: "Last",
     phone: "(999) 999-9999",
     email: "email@email.com",
   })

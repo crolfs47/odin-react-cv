@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function EducationInfoForm({
+const EducationInfoForm = ({
   onEducationSubmit,
   onCancel,
   schoolName,
   degreeType,
   concentration,
   graduationDate,
-}) {
+}) => {
   const [educationInput, setEducationInput] = useState({
     schoolName,
     degreeType,
@@ -15,14 +15,14 @@ export default function EducationInfoForm({
     graduationDate,
   });
 
-  function handleEducationChange(e) {
+  const handleEducationChange = (e) => {
     setEducationInput({
       ...educationInput,
       [e.target.name]: e.target.value,
     });
   }
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     onEducationSubmit(educationInput);
   }
@@ -89,3 +89,5 @@ export default function EducationInfoForm({
     </>
   );
 }
+
+export default EducationInfoForm;

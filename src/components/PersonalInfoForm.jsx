@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function PersonalInfoForm({
+const PersonalInfoForm = ({
   onSubmit,
   onCancel,
   firstName,
   lastName,
   phone,
   email,
-}) {
+}) => {
   const [infoInput, setInfoInput] = useState({
     firstName,
     lastName,
@@ -15,14 +15,14 @@ export default function PersonalInfoForm({
     email,
   });
 
-  function handleInfoChange(e) {
+  const handleInfoChange = (e) => {
     setInfoInput({
       ...infoInput,
       [e.target.name]: e.target.value,
     });
   }
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(infoInput);
   }
@@ -91,3 +91,5 @@ export default function PersonalInfoForm({
     </>
   );
 }
+
+export default PersonalInfoForm;

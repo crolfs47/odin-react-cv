@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PersonalInfoForm from "./PersonalInfoForm";
 
-function PersonalInfo({ firstName, lastName, phone, email, handleUpdate }) {
+const PersonalInfo = ({ firstName, lastName, phone, email, handleUpdate }) => {
   const currentPersonalInfo = {
     firstName,
     lastName,
@@ -11,7 +11,7 @@ function PersonalInfo({ firstName, lastName, phone, email, handleUpdate }) {
 
   const [isEdit, setEdit] = useState(false);
 
-  function handleEdit() {
+  const handleEdit = () => {
     setEdit(!isEdit);
   }
 

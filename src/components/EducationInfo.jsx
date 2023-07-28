@@ -1,13 +1,13 @@
 import { useState } from "react";
 import EducationInfoForm from "./EducationInfoForm";
 
-function EducationInfo({
+const EducationInfo = ({
   schoolName,
   degreeType,
   concentration,
   graduationDate,
   handleUpdate,
-}) {
+}) => {
   const currentEducationInfo = {
   schoolName,
   degreeType,
@@ -17,7 +17,7 @@ function EducationInfo({
 
   const [isEdit, setEdit] = useState(false);
 
-  function handleEdit() {
+  const handleEdit = () => {
     setEdit(!isEdit);
   }
 
