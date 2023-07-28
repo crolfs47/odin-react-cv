@@ -1,8 +1,14 @@
-
+import { useState } from "react";
 const Job = ({ job }) => {
+  const [isEdit, setEdit] = useState(false);
+
+  const handleEdit = () => {
+    setEdit(!isEdit);
+  };
 
   return (
     <>
+    {!isEdit ? (
       <div>
         <div className="flex space-between">
           <div className="bold">{job.companyName}</div>
@@ -12,7 +18,12 @@ const Job = ({ job }) => {
         </div>
         <div className="italic">{job.title}</div>
         <div>{job.description}</div>
+        <button type="button" onClick={handleEdit}>Edit</button>
+        <button type="button">Delete</button>
       </div>
+    ) : (
+      <div className="form-container"></div>
+    )}
     </>
   );
 };
