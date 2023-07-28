@@ -1,5 +1,7 @@
 import { useState } from "react";
-const Job = ({ job }) => {
+import JobForm from "./JobForm";
+
+const Job = ({ job, }) => {
   const [isEdit, setEdit] = useState(false);
 
   const handleEdit = () => {
@@ -22,7 +24,9 @@ const Job = ({ job }) => {
         <button type="button">Delete</button>
       </div>
     ) : (
-      <div className="form-container"></div>
+      <div className="form-container">
+        <JobForm job={job} />
+      </div>
     )}
     </>
   );

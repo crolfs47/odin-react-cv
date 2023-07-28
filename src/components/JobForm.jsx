@@ -1,16 +1,16 @@
-const JobForm = () => {
+const JobForm = ({job}) => {
 
   return (
     <>
     <h2 className="bottom-border">Experience</h2>
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="form-item">
         <label>
           Company:
           <input
-            value={experienceInput.companyName}
+            value={job.companyName}
             name="companyName"
-            onChange={handleExperienceChange}
+            // onChange={handleExperienceChange}
             required
           ></input>
         </label>
@@ -20,9 +20,9 @@ const JobForm = () => {
         <label>
           Job Title:
           <input
-            value={experienceInput.title}
+            value={job.title}
             name="title"
-            onChange={handleExperienceChange}
+            // onChange={handleExperienceChange}
             required
           ></input>
         </label>
@@ -32,9 +32,9 @@ const JobForm = () => {
         <label>
           Start Date:
           <input
-            value={experienceInput.startDate}
+            value={job.startDate}
             name="startDate"
-            onChange={handleExperienceChange}
+            // onChange={handleExperienceChange}
             type="date"
             required
           ></input>
@@ -45,9 +45,9 @@ const JobForm = () => {
         <label>
           End Date:
           <input
-            value={experienceInput.endDate}
+            value={job.endDate}
             name="endDate"
-            onChange={handleExperienceChange}
+            // onChange={handleExperienceChange}
             type="date"
             required
           ></input>
@@ -58,9 +58,9 @@ const JobForm = () => {
         <label>
           Description:
           <textarea
-            value={experienceInput.description}
+            value={job.description}
             name="description"
-            onChange={handleExperienceChange}
+            // onChange={handleExperienceChange}
             type="textfield"
             required
           ></textarea>
@@ -68,7 +68,7 @@ const JobForm = () => {
       </div>
       <div className="form-buttons">
         <button type="submit"> Submit </button>
-        <button type="button" onClick={onCancel}>
+        <button type="button">
           {" "}
           Cancel{" "}
         </button>
