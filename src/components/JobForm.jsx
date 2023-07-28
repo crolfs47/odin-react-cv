@@ -2,7 +2,6 @@ const JobForm = ({job}) => {
 
   return (
     <>
-    <h2 className="bottom-border">Experience</h2>
     <form>
       <div className="form-item">
         <label>
