@@ -4,6 +4,7 @@ import './App.css'
 import PersonalInfo from './components/PersonalInfo'
 import EducationInfo from './components/EducationInfo'
 import Experience from './components/Experience'
+import JobsList from './components/JobsList';
 
 const App = () => {
   const [info, setInfo] = useState({
@@ -51,9 +52,7 @@ const App = () => {
         <Experience {...experience} handleUpdate={(newExperience) => setExperience(newExperience)}/>
       </div>
       <div>
-        {jobs.map((job) => {
-          return <div key={job.id}>{job.companyName} - {job.title}</div>
-        })}
+        <JobsList jobsList={jobs} />
       </div>
     </>
   )
