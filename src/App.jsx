@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import './App.css'
 import PersonalInfo from './components/PersonalInfo'
 import EducationInfo from './components/EducationInfo'
@@ -26,6 +27,21 @@ const App = () => {
     endDate: "End Date",
     description: "Add description",
   })
+
+  const jobs = [
+    {companyName: "Company 1",
+    title: "Job Title 1",
+    startDate: "Start Date 1",
+    endDate: "End Date ",
+    description: "Add description 1",
+    id: uuidv4(), },
+    {companyName: "Company 2",
+    title: "Job Title 2",
+    startDate: "Start Date 2",
+    endDate: "End Date 2",
+    description: "Add description 2",
+    id: uuidv4(), },
+  ];
   
   return (
     <>
@@ -33,7 +49,11 @@ const App = () => {
         <PersonalInfo {...info} handleUpdate={(newInfo) => setInfo(newInfo)} />
         <EducationInfo {...education} handleUpdate={(newEducation) => setEducation(newEducation)} />
         <Experience {...experience} handleUpdate={(newExperience) => setExperience(newExperience)}/>
-
+      </div>
+      <div>
+        {jobs.map((job) => {
+          return <div key={job.id}>{job.companyName} - {job.title}</div>
+        })}
       </div>
     </>
   )
