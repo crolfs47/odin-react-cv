@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid';
 import './App.css'
 import PersonalInfo from './components/PersonalInfo'
 import EducationInfo from './components/EducationInfo'
@@ -29,20 +28,15 @@ const App = () => {
     description: "Add description",
   })
 
-  const jobs = [
-    {companyName: "Company 1",
-    title: "Job Title 1",
-    startDate: "Start Date 1",
-    endDate: "End Date ",
-    description: "Add description 1",
-    id: uuidv4(), },
-    {companyName: "Company 2",
-    title: "Job Title 2",
-    startDate: "Start Date 2",
-    endDate: "End Date 2",
-    description: "Add description 2",
-    id: uuidv4(), },
-  ];
+  // const [job, setJob] = useState({
+  //   companyName: "Company Name",
+  //   title: "Job Title",
+  //   startDate: "",
+  //   endDate: "",
+  //   description: "Add description",
+  // })
+
+  const [jobsList, setJobsList] = useState([]);
   
   return (
     <>
@@ -52,7 +46,7 @@ const App = () => {
         <Experience {...experience} handleUpdate={(newExperience) => setExperience(newExperience)}/>
       </div>
       <div>
-        <JobsList jobsList={jobs} />
+        <JobsList jobsList={jobsList} handleUpdate={(newJobsList) => setJobsList(newJobsList)} />
       </div>
     </>
   )

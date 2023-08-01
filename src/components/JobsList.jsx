@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import Job from "./Job";
 import JobForm from "./JobForm";
 
-const JobsList = ({ jobsList }) => {
+const JobsList = ({ jobsList, handleUpdate }) => {
   const job = {
     companyName: "",
     title: "",
@@ -37,7 +37,15 @@ const JobsList = ({ jobsList }) => {
 
         {isEdit && (
           <div className="form-container">
-            <JobForm job={job} />
+            <JobForm 
+              {...job}
+              onJobSubmit={(info) => {
+                jobsList.push(info);
+                handleUpdate(jobsList);
+                handleEdit();
+              }}
+              onCancel={handleEdit}
+              />
           </div>
         )}
       </div>

@@ -1,15 +1,47 @@
-const JobForm = ({job}) => {
+import { useState } from "react";
+
+const JobForm = ({ 
+  onJobSubmit, 
+  onCancel,
+  companyName,
+  title,
+  startDate,
+  endDate,
+  description,
+  id,
+}) => {
+
+  const [jobInput, setJobInput] = useState({
+    companyName,
+    title,
+    startDate,
+    endDate,
+    description,
+    id,
+  })
+
+  const handleJobChange = (e) => {
+    setJobInput({
+      ...jobInput,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onJobSubmit(jobInput);
+  }
 
   return (
     <>
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="form-item">
         <label>
           Company:
           <input
-            value={job.companyName}
+            value={jobInput.companyName}
             name="companyName"
-            // onChange={handleExperienceChange}
+            onChange={handleJobChange}
             required
           ></input>
         </label>
@@ -19,9 +51,9 @@ const JobForm = ({job}) => {
         <label>
           Job Title:
           <input
-            value={job.title}
+            value={jobInput.title}
             name="title"
-            // onChange={handleExperienceChange}
+            onChange={handleJobChange}
             required
           ></input>
         </label>
@@ -31,9 +63,9 @@ const JobForm = ({job}) => {
         <label>
           Start Date:
           <input
-            value={job.startDate}
+            value={jobInput.startDate}
             name="startDate"
-            // onChange={handleExperienceChange}
+            onChange={handleJobChange}
             type="date"
             required
           ></input>
@@ -44,9 +76,9 @@ const JobForm = ({job}) => {
         <label>
           End Date:
           <input
-            value={job.endDate}
+            value={jobInput.endDate}
             name="endDate"
-            // onChange={handleExperienceChange}
+            onChange={handleJobChange}
             type="date"
             required
           ></input>
@@ -57,9 +89,9 @@ const JobForm = ({job}) => {
         <label>
           Description:
           <textarea
-            value={job.description}
+            value={jobInput.description}
             name="description"
-            // onChange={handleExperienceChange}
+            onChange={handleJobChange}
             type="textfield"
             required
           ></textarea>
@@ -67,7 +99,7 @@ const JobForm = ({job}) => {
       </div>
       <div className="form-buttons">
         <button type="submit"> Submit </button>
-        <button type="button">
+        <button type="button" onClick={onCancel}>
           {" "}
           Cancel{" "}
         </button>
