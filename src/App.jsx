@@ -20,13 +20,13 @@ const App = () => {
     graduationDate: "Graduation MM YYYY",
   })
 
-  const [experience, setExperience] = useState({
-    companyName: "Company Name",
-    title: "Job Title",
-    startDate: "Start Date",
-    endDate: "End Date",
-    description: "Add description",
-  })
+  // const [experience, setExperience] = useState({
+  //   companyName: "Company Name",
+  //   title: "Job Title",
+  //   startDate: "Start Date",
+  //   endDate: "End Date",
+  //   description: "Add description",
+  // })
 
   // const [job, setJob] = useState({
   //   companyName: "Company Name",
@@ -43,9 +43,6 @@ const App = () => {
       <div className="cv-container">
         <PersonalInfo {...info} handleUpdate={(newInfo) => setInfo(newInfo)} />
         <EducationInfo {...education} handleUpdate={(newEducation) => setEducation(newEducation)} />
-        <Experience {...experience} handleUpdate={(newExperience) => setExperience(newExperience)}/>
-      </div>
-      <div>
         <JobsList jobsList={jobsList} handleUpdate={(newJobsList) => setJobsList(newJobsList)} />
       </div>
     </>

@@ -31,7 +31,7 @@ const JobsList = ({ jobsList, handleUpdate }) => {
 
         <div>
           {jobsList.map((job) => {
-            return <Job key={job.id} job={job} />;
+            return <Job key={job.id} job={job} jobsList={jobsList} handleUpdate={(jobsList) => handleUpdate(jobsList)} />;
           })}
         </div>
 
