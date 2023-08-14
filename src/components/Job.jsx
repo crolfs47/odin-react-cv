@@ -15,24 +15,41 @@ const Job = ({ job, jobsList, handleUpdate }) => {
 
   return (
     <>
-    {!isEdit ? (
-      <div className="job-container">
-        <div className="flex space-between">
-          <div className="bold">{job.companyName}</div>
-          <div>
-            {job.startDate} - {job.endDate}
+      {!isEdit ? (
+        <div className="job-container">
+          <div className="flex space-between">
+            <div className="bold">{job.companyName}</div>
+            <div>
+              {job.startDate} - {job.endDate}
+            </div>
           </div>
+          <div className="italic">{job.title}</div>
+          <div>{job.description}</div>
+          <button type="button" onClick={handleEdit}>
+            Edit
+          </button>
+          <button type="button" onClick={() => handleDelete(job.id)}>
+            Delete
+          </button>
         </div>
-        <div className="italic">{job.title}</div>
-        <div>{job.description}</div>
-        <button type="button" onClick={handleEdit}>Edit</button>
-        <button type="button" onClick={() => handleDelete(job.id)}>Delete</button>
-      </div>
-    ) : (
-      <div className="form-container">
-        <JobForm job={job} />
-      </div>
-    )}
+      ) : (
+        <div className="form-container">
+          <JobForm
+            {...job}
+            onJobSubmit={(info) => {
+              const newJobsList = jobsList.map((job) => {
+                if (job.id === info.id) {
+                  return info;
+                }
+                return job;
+              });
+              handleUpdate(newJobsList);
+              handleEdit();
+            }}
+            onCancel={handleEdit}
+          />
+        </div>
+      )}
     </>
   );
 };
