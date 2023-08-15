@@ -16,7 +16,7 @@ const App = () => {
     schoolName: "School Name",
     degreeType: "Degree",
     concentration: "Concentration",
-    graduationDate: "Graduation MM YYYY",
+    graduationDate: "Month YYYY",
   })
 
   const [jobsList, setJobsList] = useState([]);
