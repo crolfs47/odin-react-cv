@@ -14,6 +14,7 @@ Project completed as part of The Odin Project. My first React application. Creat
  - ESLint
  - UUID library to generate unique keys
  - date-fns to format dates
+ - Netlify to deploy
 
 ## What I learned:
  - React Components - how to organize app using components for each section
@@ -30,7 +31,7 @@ Project completed as part of The Odin Project. My first React application. Creat
 
 Assignment - https://www.theodinproject.com/lessons/react-new-cv-application
 
-View Project - https://crolfs47.github.io/odin-react-cv-builder/
+View Project - https://64dbb6655df0100efe60f4e1--quiet-kulfi-fa8603.netlify.app/
 
 ## Screenshots:
 Initial view:
