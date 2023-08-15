@@ -31,13 +31,20 @@ const JobsList = ({ jobsList, handleUpdate }) => {
 
         <div>
           {jobsList.map((job) => {
-            return <Job key={job.id} job={job} jobsList={jobsList} handleUpdate={(jobsList) => handleUpdate(jobsList)} />;
+            return (
+              <Job
+                key={job.id}
+                job={job}
+                jobsList={jobsList}
+                handleUpdate={(jobsList) => handleUpdate(jobsList)}
+              />
+            );
           })}
         </div>
 
         {isEdit && (
           <div className="form-container">
-            <JobForm 
+            <JobForm
               {...job}
               onJobSubmit={(info) => {
                 jobsList.push(info);
@@ -45,7 +52,7 @@ const JobsList = ({ jobsList, handleUpdate }) => {
                 handleEdit();
               }}
               onCancel={handleEdit}
-              />
+            />
           </div>
         )}
       </div>

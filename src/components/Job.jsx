@@ -1,5 +1,6 @@
 import { useState } from "react";
 import JobForm from "./JobForm";
+import { format } from 'date-fns';
 
 const Job = ({ job, jobsList, handleUpdate }) => {
   const [isEdit, setEdit] = useState(false);
@@ -20,7 +21,7 @@ const Job = ({ job, jobsList, handleUpdate }) => {
           <div className="flex space-between">
             <div className="bold">{job.companyName}</div>
             <div>
-              {job.startDate} - {job.endDate}
+              {format(new Date(job.startDate), 'MMMM Y')} - {format(new Date(job.endDate), 'MMMM Y')}
             </div>
           </div>
           <div className="italic">{job.title}</div>

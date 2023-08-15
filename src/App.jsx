@@ -2,7 +2,6 @@ import { useState } from 'react'
 import './App.css'
 import PersonalInfo from './components/PersonalInfo'
 import EducationInfo from './components/EducationInfo'
-import Experience from './components/Experience'
 import JobsList from './components/JobsList';
 
 const App = () => {
@@ -19,22 +18,6 @@ const App = () => {
     concentration: "Concentration",
     graduationDate: "Graduation MM YYYY",
   })
-
-  // const [experience, setExperience] = useState({
-  //   companyName: "Company Name",
-  //   title: "Job Title",
-  //   startDate: "Start Date",
-  //   endDate: "End Date",
-  //   description: "Add description",
-  // })
-
-  // const [job, setJob] = useState({
-  //   companyName: "Company Name",
-  //   title: "Job Title",
-  //   startDate: "",
-  //   endDate: "",
-  //   description: "Add description",
-  // })
 
   const [jobsList, setJobsList] = useState([]);
   
